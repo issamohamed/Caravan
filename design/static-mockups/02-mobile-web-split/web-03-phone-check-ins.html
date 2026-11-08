@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Caravan for clinics: phone check-ins</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Outfit:wght@500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F1BFC1}
+a{color:#A80F55}a:hover{color:#8A0C46}
+button,input{font-family:inherit}
+</style>
+<style>
+.glass{backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 22px 44px -20px rgba(122,22,66,.38),0 6px 14px -8px rgba(122,22,66,.20)}
+.glass-dark{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 22px 44px -18px rgba(20,8,14,.55)}
+.glass-thin{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 6px 16px -10px rgba(122,22,66,.35)}
+.pill-glass{backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 8px 18px -10px rgba(122,22,66,.40)}
+.pill-solid{box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 12px 22px -12px rgba(60,10,30,.65)}
+.frost{backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)}
+.glass,.pill-glass,.pill-solid{transition:transform .18s ease,box-shadow .18s ease}
+a.pill-glass:hover,button.pill-glass:hover,a.pill-solid:hover,button.pill-solid:hover,button.glass:hover{transform:translateY(-2px)}
+@media (prefers-reduced-transparency: reduce){.glass,.pill-glass,.glass-thin,.frost{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background-color:#FFFFFF!important}}
+@media (prefers-reduced-motion: reduce){.glass,.pill-glass,.pill-solid{transition:none}}
+a.glass:hover{transform:translateY(-3px)}
+</style>
+</head>
+<body>
+<div style="min-height: 100vh; background: radial-gradient(620px 440px at 6% 8%, rgba(211,21,107,0.20), transparent 70%), radial-gradient(760px 560px at 55% 45%, rgba(255,255,255,0.45), transparent 70%), radial-gradient(520px 420px at 100% 96%, rgba(18,143,152,0.50), transparent 70%), radial-gradient(480px 380px at 0% 100%, rgba(211,21,107,0.16), transparent 70%), #F1BFC1; color: #231F20; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.45; background-attachment: fixed">
+
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 10px 24px; background: #0B4F54; color: #FFFFFF">
+  <a href="web-01-home.html" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none">
+    <span style="font-family: 'Gloock', Georgia, serif; font-size: 30px; font-weight: 400; line-height: 1; letter-spacing: -0.01em; color: #FFFFFF">caravan<span style="color: #F48FB4">.</span></span>
+    <span style="font-size: 13px; color: #A9DADC">for clinics</span>
+  </a>
+  <nav aria-label="Main" style="flex: 1 1 auto; display: flex; flex-wrap: wrap; gap: 2px">
+    <a href="web-01-home.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Home</a>
+    <a href="web-02-desk-board.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Desk board</a>
+    <a class="pill-solid" href="web-03-phone-check-ins.html" aria-current="page" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 14px; border-radius: 999px; background: #0E6970; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600">Phone check-ins <span style="padding: 1px 7px; border-radius: 999px; background: #D3156B; color: #FFFFFF; font-size: 12px; font-weight: 600">1</span></a>
+    <a href="web-04-imports.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Imports</a>
+    <a href="web-05-duplicate-review.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Review queue <span style="padding: 1px 7px; border-radius: 999px; background: #D3156B; color: #FFFFFF; font-size: 12px; font-weight: 600">4</span></a>
+    <a href="web-06-question-sets.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Question sets</a>
+    <a href="web-07-routines.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Routines</a>
+    <a href="web-08-audit-log.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Audit log</a>
+  </nav>
+  <button class="pill-solid" aria-label="Signed in as desk user DS" style="width: 44px; height: 44px; border-radius: 999px; border: 1px solid #2A7B80; background: #0E6970; color: #FFFFFF; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit">DS</button>
+</header>
+
+<main style="max-width: 1440px; margin: 0 auto; padding: 20px 24px 36px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px">
+    <div>
+      <h1 style="margin: 0; font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15">Phone check-ins</h1>
+      <p style="margin: 4px 0 0; font-size: 14px; color: #4E383E">Family Medicine · Desk 2 · Mon, Oct 26</p>
+    </div>
+    <span style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: #D2EEEF; color: #0B5C61; font-size: 13px; font-weight: 600">
+      <span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #0E7A82"></span>
+      Connected to scheduling · FHIR R4 sandbox · synced 9:21:04
+    </span>
+  </div>
+
+  <ul aria-label="Summary" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px">
+    <li style="padding: 6px 12px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 13px; font-weight: 600">1 needs help</li>
+    <li style="padding: 6px 12px; border-radius: 999px; background: #D2EEEF; color: #0B5C61; font-size: 13px; font-weight: 600">2 checked in by phone</li>
+    <li style="padding: 6px 12px; border-radius: 999px; background: #EFE3E6; color: #4A3A3E; font-size: 13px; font-weight: 600">1 in progress</li>
+    <li style="padding: 6px 12px; border-radius: 999px; background: #F4E4E6; color: #4A3A3E; font-size: 13px; font-weight: 600">1 not started</li>
+  </ul>
+
+  <ul aria-label="Patients" style="list-style: none; margin: 0; padding: 0 0 8px; display: flex; gap: 14px; overflow-x: auto">
+    <li class="glass" style="flex: 0 0 280px; display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 24px; background: rgba(255,255,255,0.74); border: 2px solid #231F20; box-sizing: border-box">
+      <span style="align-self: flex-start; padding: 3px 9px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 12px; font-weight: 700">Needs help · 2 min</span>
+      <div><div style="font-size: 18px; font-weight: 600">Robert Kim</div><div style="font-size: 13px; color: #4E383E">9:40 · Dr. Patel</div></div>
+      <p style="margin: 0; font-size: 14px; color: #4A3A3E">Stopped on question 2. Seated by the windows.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="padding: 2px 8px; border-radius: 999px; background: #FCE3EC; color: #A80F55; font-size: 12px; font-weight: 600">Simple words</span><span style="padding: 2px 8px; border-radius: 999px; background: #FCE3EC; color: #A80F55; font-size: 12px; font-weight: 600">Large text</span></div>
+      <div style="display: flex; gap: 8px; margin-top: auto">
+        <button class="pill-solid" style="flex: 1; min-height: 44px; border-radius: 999px; border: 1px solid #231F20; background: #231F20; color: #FFFFFF; font-size: 14px; font-weight: 600; cursor: pointer">I'm going</button>
+        <button class="pill-glass" style="flex: 1; min-height: 44px; border-radius: 999px; border: 1px solid #8C5560; background: rgba(255,255,255,0.62); color: #231F20; font-size: 14px; font-weight: 500; cursor: pointer">Call his phone</button>
+      </div>
+    </li>
+    <li class="glass" style="flex: 0 0 280px; display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 24px; background: rgba(255,255,255,0.74); box-sizing: border-box">
+      <span style="align-self: flex-start; padding: 3px 9px; border-radius: 999px; background: #D2EEEF; color: #0B5C61; font-size: 12px; font-weight: 700">Checked in · 9:21</span>
+      <div><div style="font-size: 18px; font-weight: 600">Dorothy Wallace</div><div style="font-size: 13px; color: #4E383E">9:30 · Dr. Patel</div></div>
+      <p style="margin: 0; font-size: 14px; color: #4A3A3E">For the nurse: review medicines from the bottles she brought.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="padding: 2px 8px; border-radius: 999px; background: #FCE3EC; color: #A80F55; font-size: 12px; font-weight: 600">Simple words</span><span style="padding: 2px 8px; border-radius: 999px; background: #F4E4E6; color: #4A3A3E; font-size: 12px; font-weight: 600">#214</span></div>
+      <div style="margin-top: auto"><button class="pill-glass" style="width: 100%; min-height: 44px; border-radius: 999px; border: 1px solid #8C5560; background: rgba(255,255,255,0.62); color: #231F20; font-size: 14px; font-weight: 500; cursor: pointer">Open answers</button></div>
+    </li>
+    <li class="glass" style="flex: 0 0 280px; display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 24px; background: rgba(255,255,255,0.74); box-sizing: border-box">
+      <span style="align-self: flex-start; padding: 3px 9px; border-radius: 999px; background: #D2EEEF; color: #0B5C61; font-size: 12px; font-weight: 700">Checked in · 9:14</span>
+      <div><div style="font-size: 18px; font-weight: 600">James Park</div><div style="font-size: 13px; color: #4E383E">9:20 · Dr. Okafor</div></div>
+      <p class="glass" style="margin: 0; padding: 8px 10px; border-radius: 22px; background: rgba(253,238,211,0.74); color: #8A4B05; font-size: 13px; font-weight: 500">1 medicine change: atorvastatin marked stopped. For the nurse.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="padding: 2px 8px; border-radius: 999px; background: #FCE3EC; color: #A80F55; font-size: 12px; font-weight: 600">Medical terms</span></div>
+      <div style="margin-top: auto"><button class="pill-glass" style="width: 100%; min-height: 44px; border-radius: 999px; border: 1px solid #8C5560; background: rgba(255,255,255,0.62); color: #231F20; font-size: 14px; font-weight: 500; cursor: pointer">Open answers</button></div>
+    </li>
+    <li class="glass" style="flex: 0 0 280px; display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 24px; background: rgba(255,255,255,0.74); box-sizing: border-box">
+      <span style="align-self: flex-start; padding: 3px 9px; border-radius: 999px; background: #EFE3E6; color: #4A3A3E; font-size: 12px; font-weight: 700">In progress · question 3 of 5</span>
+      <div><div style="font-size: 18px; font-weight: 600">Linda Osei</div><div style="font-size: 13px; color: #4E383E">9:45 · Dr. Patel</div></div>
+      <p style="margin: 0; font-size: 14px; color: #4A3A3E">Started on her phone at 9:20.</p>
+      <div aria-hidden="true" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px"><span style="height: 6px; border-radius: 999px; background: #D3156B"></span><span style="height: 6px; border-radius: 999px; background: #D3156B"></span><span style="height: 6px; border-radius: 999px; background: #74C3C8"></span><span style="height: 6px; border-radius: 999px; background: #F7D7DA"></span><span style="height: 6px; border-radius: 999px; background: #F7D7DA"></span></div>
+      <p style="margin: auto 0 0; font-size: 13px; color: #4E383E">Nothing to do yet.</p>
+    </li>
+    <li class="glass" style="flex: 0 0 280px; display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 24px; background: rgba(255,255,255,0.74); box-sizing: border-box">
+      <span style="align-self: flex-start; padding: 3px 9px; border-radius: 999px; background: #F4E4E6; color: #4A3A3E; font-size: 12px; font-weight: 700">Not started</span>
+      <div><div style="font-size: 18px; font-weight: 600">Frank Moreno</div><div style="font-size: 13px; color: #4E383E">10:00 · Dr. Okafor</div></div>
+      <p style="margin: 0; font-size: 14px; color: #4A3A3E">Prefers to check in at the desk (noted at his last visit).</p>
+      <p style="margin: auto 0 0; font-size: 13px; color: #4E383E">Expect him at the counter.</p>
+    </li>
+  </ul>
+
+  <section class="glass" aria-labelledby="flow-h" style="background: rgba(255,255,255,0.74); border-radius: 24px; padding: 18px 22px 20px">
+    <h2 id="flow-h" style="margin: 0; font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 19px; font-weight: 700">How a phone check-in reaches this screen</h2>
+    <div style="overflow-x: auto; margin-top: 14px">
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; min-width: 860px">
+        <li class="glass" style="position: relative; display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 22px; background: rgba(227,243,243,0.9)">
+          <span style="font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 22px; font-weight: 700; color: #A80F55">1</span>
+          <span style="font-weight: 600">Patient taps "I'm at the clinic"</span>
+          <span style="font-size: 13px; color: #5A3A42">The phone's location is a hint, never a requirement.</span>
+        </li>
+        <li class="glass" style="position: relative; display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 22px; background: rgba(227,243,243,0.9)">
+          <span style="font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 22px; font-weight: 700; color: #A80F55">2</span>
+          <span style="font-weight: 600">Answers are saved to the visit</span>
+          <span style="align-self: flex-start; padding: 2px 8px; border-radius: 999px; background: #FFFFFF; border: 1px solid #F4C7D6; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A80F55">QuestionnaireResponse</span>
+        </li>
+        <li class="glass" style="position: relative; display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 22px; background: rgba(227,243,243,0.9)">
+          <span style="font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 22px; font-weight: 700; color: #A80F55">3</span>
+          <span style="font-weight: 600">The visit is marked arrived</span>
+          <span style="align-self: flex-start; padding: 2px 8px; border-radius: 999px; background: #FFFFFF; border: 1px solid #F4C7D6; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A80F55">Appointment.status = arrived</span>
+        </li>
+        <li class="glass-dark" style="position: relative; display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 22px; background: rgba(35,31,32,0.9); color: #FFFFFF">
+          <span style="font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 22px; font-weight: 700; color: #F9C6D4">4</span>
+          <span style="font-weight: 600">It shows up here</span>
+          <span style="font-size: 13px; color: #CBEBEC">With the patient's wording choice, so staff can match it.</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+</main>
+</div>
+<p class="glass-dark" style="position: fixed; right: 16px; bottom: 16px; margin: 0; padding: 7px 14px; border-radius: 999px; background: rgba(11,79,84,0.92); color: #F9C6D4; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 12px; font-weight: 500; z-index: 10">Sample data · no real patients</p>
+</body>
+</html>

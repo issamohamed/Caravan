@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Caravan for clinics: routines</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Outfit:wght@500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F1BFC1}
+a{color:#A80F55}a:hover{color:#8A0C46}
+button,input{font-family:inherit}
+</style>
+<style>
+.glass{backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 22px 44px -20px rgba(122,22,66,.38),0 6px 14px -8px rgba(122,22,66,.20)}
+.glass-dark{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 22px 44px -18px rgba(20,8,14,.55)}
+.glass-thin{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 6px 16px -10px rgba(122,22,66,.35)}
+.pill-glass{backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 8px 18px -10px rgba(122,22,66,.40)}
+.pill-solid{box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 12px 22px -12px rgba(60,10,30,.65)}
+.frost{backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)}
+.glass,.pill-glass,.pill-solid{transition:transform .18s ease,box-shadow .18s ease}
+a.pill-glass:hover,button.pill-glass:hover,a.pill-solid:hover,button.pill-solid:hover,button.glass:hover{transform:translateY(-2px)}
+@media (prefers-reduced-transparency: reduce){.glass,.pill-glass,.glass-thin,.frost{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background-color:#FFFFFF!important}}
+@media (prefers-reduced-motion: reduce){.glass,.pill-glass,.pill-solid{transition:none}}
+a.glass:hover{transform:translateY(-3px)}
+</style>
+
+</head>
+<body>
+<div style="min-height: 100vh; background: radial-gradient(620px 440px at 6% 8%, rgba(211,21,107,0.20), transparent 70%), radial-gradient(760px 560px at 55% 45%, rgba(255,255,255,0.45), transparent 70%), radial-gradient(520px 420px at 100% 96%, rgba(18,143,152,0.50), transparent 70%), radial-gradient(480px 380px at 0% 100%, rgba(211,21,107,0.16), transparent 70%), #F1BFC1; background-attachment: fixed; color: #231F20; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.45">
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 10px 24px; background: #0B4F54; color: #FFFFFF">
+  <a href="web-01-home.html" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none">
+    <span style="font-family: 'Gloock', Georgia, serif; font-size: 30px; font-weight: 400; line-height: 1; letter-spacing: -0.01em; color: #FFFFFF">caravan<span style="color: #F48FB4">.</span></span>
+    <span style="font-size: 13px; color: #A9DADC">for clinics</span>
+  </a>
+  <nav aria-label="Main" style="flex: 1 1 auto; display: flex; flex-wrap: wrap; gap: 2px">
+    <a href="web-01-home.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Home</a>
+    <a href="web-02-desk-board.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Desk board</a>
+    <a href="web-03-phone-check-ins.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Phone check-ins <span style="padding: 1px 7px; border-radius: 999px; background: #D3156B; color: #FFFFFF; font-size: 12px; font-weight: 600">1</span></a>
+    <a href="web-04-imports.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Imports</a>
+    <a href="web-05-duplicate-review.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Review queue <span style="padding: 1px 7px; border-radius: 999px; background: #D3156B; color: #FFFFFF; font-size: 12px; font-weight: 600">4</span></a>
+    <a href="web-06-question-sets.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Question sets</a>
+    <a class="pill-solid" href="web-07-routines.html" aria-current="page" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 14px; border-radius: 999px; background: #0E6970; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600">Routines</a>
+    <a href="web-08-audit-log.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Audit log</a>
+  </nav>
+  <button class="pill-solid" aria-label="Signed in as desk user DS" style="width: 44px; height: 44px; border-radius: 999px; border: 1px solid #2A7B80; background: #0E6970; color: #FFFFFF; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit">DS</button>
+</header>
+
+<main style="max-width: 1440px; margin: 0 auto; padding: 26px 24px 64px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 14px">
+    <div>
+      <h1 style="margin: 0; font-family: 'Gloock', Georgia, serif; font-size: 48px; font-weight: 400; line-height: 1.05; letter-spacing: -0.01em">Routines</h1>
+      <p style="margin: 6px 0 0; font-size: 16px; color: #4A3A3E">The step lists your desk repeats every day. Every check-in runs one.</p>
+    </div>
+    <button class="pill-solid" style="min-height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid #D3156B; background: #D3156B; color: #FFFFFF; font-size: 15px; font-weight: 600; cursor: pointer">+ New routine</button>
+  </div>
+
+  <div role="group" aria-label="Choose a routine" style="display: flex; flex-wrap: wrap; gap: 8px">
+    <button aria-pressed="true" class="pill-solid" style="min-height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid #231F20; background: #231F20; color: #FFFFFF; font-size: 14px; font-weight: 600; cursor: pointer">Return visit · 6 steps</button>
+    <button aria-pressed="false" class="pill-glass" style="min-height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 14px; font-weight: 500; cursor: pointer">New patient · 9 steps</button>
+    <button aria-pressed="false" class="pill-glass" style="min-height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 14px; font-weight: 500; cursor: pointer">Lab only · 3 steps</button>
+    <button aria-pressed="false" class="pill-glass" style="min-height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 14px; font-weight: 500; cursor: pointer">Same-day add-on · 5 steps</button>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px">
+    <section aria-labelledby="routine-h" class="glass" style="flex: 999 1 640px; min-width: 0; padding: 22px 24px; border-radius: 28px; background: rgba(255,255,255,0.62)">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px">
+        <div>
+          <h2 id="routine-h" style="margin: 0; font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 24px; font-weight: 700">Return visit</h2>
+          <p style="margin: 2px 0 0; font-size: 14px; color: #4E383E">Used 312 times this week · drag steps to reorder · press the step number at the desk to mark it</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <button class="pill-glass" style="min-height: 42px; padding: 0 16px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 13px; font-weight: 500; cursor: pointer">Duplicate</button>
+          <button class="pill-glass" style="min-height: 42px; padding: 0 16px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 13px; font-weight: 500; cursor: pointer">Test run</button>
+        </div>
+      </div>
+
+      <div style="overflow-x: auto; margin: 18px -6px 0; padding: 6px 6px 14px">
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; gap: 12px; width: max-content">
+          <li class="glass" style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 24px; background: rgba(255,255,255,0.8)">
+            <div style="display: flex; justify-content: space-between; align-items: center"><span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 13px; font-weight: 600">1</span><svg width="18" height="18" viewBox="0 0 24 24" fill="#B07F88" aria-hidden="true"><circle cx="9" cy="6" r="1.6"></circle><circle cx="15" cy="6" r="1.6"></circle><circle cx="9" cy="12" r="1.6"></circle><circle cx="15" cy="12" r="1.6"></circle><circle cx="9" cy="18" r="1.6"></circle><circle cx="15" cy="18" r="1.6"></circle></svg></div>
+            <span style="font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 700">Confirm identity</span>
+            <span style="align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: #D2EEEF; color: #0B5C61; font-size: 12px; font-weight: 600">At the desk</span>
+            <span style="font-size: 13px; color: #4A3A3E">Checks: two identifiers</span>
+            <span style="align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 12px; font-weight: 600">Can't be skipped</span>
+          </li>
+          <li class="glass" style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 24px; background: rgba(255,255,255,0.8)">
+            <div style="display: flex; justify-content: space-between; align-items: center"><span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 13px; font-weight: 600">2</span><svg width="18" height="18" viewBox="0 0 24 24" fill="#B07F88" aria-hidden="true"><circle cx="9" cy="6" r="1.6"></circle><circle cx="15" cy="6" r="1.6"></circle><circle cx="9" cy="12" r="1.6"></circle><circle cx="15" cy="12" r="1.6"></circle><circle cx="9" cy="18" r="1.6"></circle><circle cx="15" cy="18" r="1.6"></circle></svg></div>
+            <span style="font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 700">Phone and address</span>
+            <span style="align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: #FCE3EC; color: #A80F55; font-size: 12px; font-weight: 600">Phone or desk</span>
+            <span style="font-size: 13px; color: #4A3A3E">Checks: phone format, address format</span>
+          </li>
+          <li class="glass" style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 24px; background: rgba(255,255,255,0.8)">
+            <div style="display: flex; justify-content: space-between; align-items: center"><span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 13px; font-weight: 600">3</span><svg width="18" height="18" viewBox="0 0 24 24" fill="#B07F88" aria-hidden="true"><circle cx="9" cy="6" r="1.6"></circle><circle cx="15" cy="6" r="1.6"></circle><circle cx="9" cy="12" r="1.6"></circle><circle cx="15" cy="12" r="1.6"></circle><circle cx="9" cy="18" r="1.6"></circle><circle cx="15" cy="18" r="1.6"></circle></svg></div>
+            <span style="font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 700">Insurance card</span>
+            <span style="align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: #FCE3EC; color: #A80F55; font-size: 12px; font-weight: 600">Phone or desk</span>
+            <span style="font-size: 13px; color: #4A3A3E">Checks: card end date, member ID format</span>
+          </li>
+          <li class="glass" style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 24px; background: rgba(255,255,255,0.8)">
+            <div style="display: flex; justify-content: space-between; align-items: center"><span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 13px; font-weight: 600">4</span><svg width="18" height="18" viewBox="0 0 24 24" fill="#B07F88" aria-hidden="true"><circle cx="9" cy="6" r="1.6"></circle><circle cx="15" cy="6" r="1.6"></circle><circle cx="9" cy="12" r="1.6"></circle><circle cx="15" cy="12" r="1.6"></circle><circle cx="9" cy="18" r="1.6"></circle><circle cx="15" cy="18" r="1.6"></circle></svg></div>
+            <span style="font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 700">Yearly consent</span>
+            <span style="align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: #0E7A82; color: #FFFFFF; font-size: 12px; font-weight: 600">Before arrival · automatic</span>
+            <span style="font-size: 13px; color: #4A3A3E">Checks: signed in the last 12 months</span>
+          </li>
+          <li class="glass" style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 24px; background: rgba(255,255,255,0.8)">
+            <div style="display: flex; justify-content: space-between; align-items: center"><span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 13px; font-weight: 600">5</span><svg width="18" height="18" viewBox="0 0 24 24" fill="#B07F88" aria-hidden="true"><circle cx="9" cy="6" r="1.6"></circle><circle cx="15" cy="6" r="1.6"></circle><circle cx="9" cy="12" r="1.6"></circle><circle cx="15" cy="12" r="1.6"></circle><circle cx="9" cy="18" r="1.6"></circle><circle cx="15" cy="18" r="1.6"></circle></svg></div>
+            <span style="font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 700">Interpreter</span>
+            <span style="align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: #0E7A82; color: #FFFFFF; font-size: 12px; font-weight: 600">Before arrival · from booking</span>
+            <span style="font-size: 13px; color: #4A3A3E">Checks: language need on file</span>
+          </li>
+          <li class="glass" style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 24px; background: rgba(251,227,192,0.85)">
+            <div style="display: flex; justify-content: space-between; align-items: center"><span style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 13px; font-weight: 600">6</span><svg width="18" height="18" viewBox="0 0 24 24" fill="#8A6A3A" aria-hidden="true"><circle cx="9" cy="6" r="1.6"></circle><circle cx="15" cy="6" r="1.6"></circle><circle cx="9" cy="12" r="1.6"></circle><circle cx="15" cy="12" r="1.6"></circle><circle cx="9" cy="18" r="1.6"></circle><circle cx="15" cy="18" r="1.6"></circle></svg></div>
+            <span style="font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 700">Patient portal</span>
+            <span style="align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: #FFFFFF; color: #5C4510; font-size: 12px; font-weight: 600">Skipped 68% of the time</span>
+            <span style="font-size: 13px; color: #5C4510">Checks: account already active</span>
+          </li>
+          <li style="flex: 0 0 170px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px; border-radius: 24px; border: 2px dashed #B07F88; color: #5A3A42; font-size: 14px; font-weight: 600">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+            <button style="border: 0; background: transparent; color: #5A3A42; font-size: 14px; font-weight: 600; cursor: pointer; min-height: 44px">Add a step</button>
+          </li>
+        </ol>
+      </div>
+
+      <fieldset style="margin: 8px 0 0; padding: 18px 0 0; border: 0; border-top: 1px solid #F2D6D8">
+        <legend style="padding: 0; font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 17px; font-weight: 700">Rules for this routine</legend>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px">
+          <label class="pill-glass" style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 18px; border-radius: 999px; background: rgba(255,255,255,0.62); font-size: 14px; cursor: pointer"><input type="checkbox" role="switch" checked style="width: 22px; height: 22px; accent-color: #D3156B; margin: 0">Settle steps before arrival when the patient checks in by phone</label>
+          <label class="pill-glass" style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 18px; border-radius: 999px; background: rgba(255,255,255,0.62); font-size: 14px; cursor: pointer"><input type="checkbox" role="switch" checked style="width: 22px; height: 22px; accent-color: #D3156B; margin: 0">Send open steps to the clinic's follow-up list instead of holding the visit</label>
+          <label class="pill-glass" style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 18px; border-radius: 999px; background: rgba(255,255,255,0.62); font-size: 14px; cursor: pointer"><input type="checkbox" role="switch" style="width: 22px; height: 22px; accent-color: #D3156B; margin: 0">Ask for a reason whenever a step is skipped</label>
+        </div>
+      </fieldset>
+    </section>
+
+    <aside style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <div class="glass" style="padding: 18px 20px; border-radius: 26px; background: rgba(255,255,255,0.62)">
+        <h2 style="margin: 0 0 12px; font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 17px; font-weight: 700">This week · sample figures</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; text-align: center">
+          <div style="padding: 12px 6px; border-radius: 20px; background: rgba(255,255,255,0.7)"><div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 700">312</div><div style="font-size: 12px; color: #4E383E">runs</div></div>
+          <div style="padding: 12px 6px; border-radius: 20px; background: rgba(255,255,255,0.7)"><div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 700">2:35</div><div style="font-size: 12px; color: #4E383E">avg time</div></div>
+          <div style="padding: 12px 6px; border-radius: 20px; background: rgba(255,255,255,0.7)"><div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 700">4/6</div><div style="font-size: 12px; color: #4E383E">done early</div></div>
+        </div>
+        <p style="margin: 16px 0 8px; font-size: 13px; font-weight: 600; color: #4A3A3E">Average time per step</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px">
+          <li><div style="display: flex; justify-content: space-between"><span>Insurance card</span><span style="font-family: 'IBM Plex Mono', monospace">58s</span></div><div aria-hidden="true" style="height: 8px; margin-top: 4px; border-radius: 999px; background: rgba(255,255,255,0.7)"><div style="width: 100%; height: 8px; border-radius: 999px; background: #D3156B"></div></div></li>
+          <li><div style="display: flex; justify-content: space-between"><span>Phone and address</span><span style="font-family: 'IBM Plex Mono', monospace">31s</span></div><div aria-hidden="true" style="height: 8px; margin-top: 4px; border-radius: 999px; background: rgba(255,255,255,0.7)"><div style="width: 53%; height: 8px; border-radius: 999px; background: #D3156B"></div></div></li>
+          <li><div style="display: flex; justify-content: space-between"><span>Confirm identity</span><span style="font-family: 'IBM Plex Mono', monospace">22s</span></div><div aria-hidden="true" style="height: 8px; margin-top: 4px; border-radius: 999px; background: rgba(255,255,255,0.7)"><div style="width: 38%; height: 8px; border-radius: 999px; background: #D3156B"></div></div></li>
+          <li><div style="display: flex; justify-content: space-between"><span>Interpreter</span><span style="font-family: 'IBM Plex Mono', monospace">12s</span></div><div aria-hidden="true" style="height: 8px; margin-top: 4px; border-radius: 999px; background: rgba(255,255,255,0.7)"><div style="width: 21%; height: 8px; border-radius: 999px; background: #0E7A82"></div></div></li>
+          <li><div style="display: flex; justify-content: space-between"><span>Patient portal</span><span style="font-family: 'IBM Plex Mono', monospace">9s</span></div><div aria-hidden="true" style="height: 8px; margin-top: 4px; border-radius: 999px; background: rgba(255,255,255,0.7)"><div style="width: 16%; height: 8px; border-radius: 999px; background: #0E7A82"></div></div></li>
+          <li><div style="display: flex; justify-content: space-between"><span>Yearly consent</span><span style="font-family: 'IBM Plex Mono', monospace">6s</span></div><div aria-hidden="true" style="height: 8px; margin-top: 4px; border-radius: 999px; background: rgba(255,255,255,0.7)"><div style="width: 10%; height: 8px; border-radius: 999px; background: #0E7A82"></div></div></li>
+        </ul>
+      </div>
+
+      <div class="glass" style="padding: 18px 20px; border-radius: 26px; background: rgba(210,238,239,0.9)">
+        <p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0B5C61">Suggestion</p>
+        <h2 style="margin: 4px 0 6px; font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 18px; font-weight: 700; color: #0B4F54">Make the portal step optional?</h2>
+        <p style="margin: 0; font-size: 14px; color: #0B4F54">It was skipped in 68% of return visits this week, usually because the patient's account was already active.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px">
+          <button class="pill-solid" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #0B4F54; background: #0B4F54; color: #FFFFFF; font-size: 14px; font-weight: 600; cursor: pointer">Make optional</button>
+          <button class="pill-glass" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #5FA9AD; background: rgba(255,255,255,0.6); color: #0B4F54; font-size: 14px; font-weight: 500; cursor: pointer">Not now</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+</div>
+<p class="glass-dark" style="position: fixed; right: 16px; bottom: 16px; margin: 0; padding: 7px 14px; border-radius: 999px; background: rgba(11,79,84,0.92); color: #F9C6D4; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 12px; font-weight: 500; z-index: 10">Sample data · no real patients</p>
+</body>
+</html>

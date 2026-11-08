@@ -1,0 +1,46 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  // oxlint runs ESLint's rule sets (core, typescript, react, react-hooks, jsx-a11y)
+  // without needing the TypeScript compiler API, which TypeScript 7 doesn't ship.
+  "plugins": ["typescript", "react", "jsx-a11y", "unicorn", "oxc", "import", "vitest"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "env": {
+    "browser": true,
+    "es2024": true
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+
+    // React Compiler rules. Caravan doesn't use the compiler, and the patterns they
+    // flag (live demo clocks read during render, latest-value refs) are intentional.
+    "react/purity": "off",
+    "react/refs": "off",
+    "react/set-state-in-effect": "off",
+    "react/preserve-manual-memoization": "off",
+
+    // Labels here wrap their input with the text a level or two down.
+    "jsx-a11y/label-has-associated-control": ["error", { "depth": 4 }],
+    "jsx-a11y/control-has-associated-label": ["error", { "depth": 4 }],
+    // Scroll areas get tabIndex={0} so keyboard users can scroll them (axe: scrollable-region-focusable).
+    "jsx-a11y/no-noninteractive-tabindex": ["error", { "roles": ["tabpanel", "region"], "tags": ["pre", "ul"] }],
+    // Custom radio groups should move to native radios. Kept visible as warnings.
+    "jsx-a11y/prefer-tag-over-role": "warn",
+
+    // Style-only rules that would churn working code.
+    "import/no-unassigned-import": "off",
+    "unicorn/consistent-function-scoping": "off",
+    "eslint/no-underscore-dangle": ["warn", { "allow": ["__CARAVAN_START__"] }]
+  },
+  "overrides": [
+    {
+      "files": ["scripts/**", "e2e/**", "*.config.ts", "*.config.js"],
+      "env": { "node": true, "browser": false }
+    }
+  ],
+  "ignorePatterns": ["dist/**", "dist-*/**", "node_modules/**", "test-results/**", "playwright-report/**", "public/**"]
+}

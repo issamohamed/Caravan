@@ -1,0 +1,6 @@
+@import '../styles/base.css';
+
+/* The gallery and case study are always light, on the blush ground. */
+html {
+  scroll-padding-top: 24px;
+}

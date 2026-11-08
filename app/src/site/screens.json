@@ -1,0 +1,26 @@
+{
+  "patient": [
+    { "id": "arrival", "file": "mobile-01-arrival", "num": "01", "title": "Arrival", "heading": "Dorothy", "desc": "Greets the patient, shows the visit, and offers the desk instead." },
+    { "id": "contact", "file": "mobile-02-phone-and-address", "num": "02", "title": "Phone and address", "heading": "Is this still your phone number and address?", "desc": "Confirms contact info on file, with an optional note." },
+    { "id": "meds", "file": "mobile-03-medicines-question", "num": "03", "title": "Medicines question", "heading": "Do you know the names of the medicines you take?", "desc": "The answer here sets the wording for what follows." },
+    { "id": "brought", "file": "mobile-04a-simple-words", "num": "04a", "title": "Simple words", "heading": "Did you bring your pill bottles or a list?", "desc": "The pill-bottle question, with a reassuring reply." },
+    { "id": "medlist", "file": "mobile-04b-medical-terms", "num": "04b", "title": "Medical terms", "heading": "Your medication list", "desc": "The medication list: Taking, Stopped or Changed." },
+    { "id": "reason", "file": "mobile-05-reason-for-visit", "num": "05", "title": "Reason for visit", "heading": "What’s the main reason for your visit today?", "desc": "Pick one, type it, or say it." },
+    { "id": "insurance", "file": "mobile-06-insurance-card", "num": "06", "title": "Insurance card", "heading": "Is this the same insurance card as last time?", "desc": "Same card, a new card with a photo, or self-pay." },
+    { "id": "review", "file": "mobile-07-check-answers", "num": "07", "title": "Check answers", "heading": "Check your answers", "desc": "Change any answer and come straight back here." },
+    { "id": "done", "file": "mobile-08-checked-in", "num": "08", "title": "Checked in", "heading": "You’re checked in.", "desc": "A check-in number and what happens next." },
+    { "id": "help", "file": "mobile-09-help-requested", "num": "09", "title": "Help requested", "heading": "Help is on the way.", "desc": "Staff come to the patient. Answers stay saved." },
+    { "id": "desk", "file": "mobile-10-desk-instead", "num": "10", "title": "Check in at the desk", "heading": "No problem.", "desc": "A code to show at the counter. No phone steps." }
+  ],
+  "clinic": [
+    { "id": "home", "file": "web-01-home", "num": "01", "title": "Home", "heading": "Good", "desc": "Today’s numbers, every tool, and what needs you now." },
+    { "id": "desk", "file": "web-02-desk-board", "num": "02", "title": "Desk board", "heading": "Arrivals", "desc": "Arrivals timeline, check-in steps on number keys, and checks." },
+    { "id": "phone", "file": "web-03-phone-check-ins", "num": "03", "title": "Phone check-ins", "heading": "Phone check-ins", "desc": "Live cards, help requests, and each patient’s answers." },
+    { "id": "imports", "file": "web-04-imports", "num": "04", "title": "Imports", "heading": "Imports", "desc": "Drop a file, map it to FHIR, fix flagged rows, commit." },
+    { "id": "review", "file": "web-05-review-queue", "num": "05", "title": "Review queue", "heading": "Review queue", "desc": "Possible duplicates and held rows. Decisions need a reason." },
+    { "id": "questions", "file": "web-06-question-sets", "num": "06", "title": "Question sets", "heading": "Question sets", "desc": "Edit both wordings with a live reading level and phone preview." },
+    { "id": "routines", "file": "web-07-routines", "num": "07", "title": "Routines", "heading": "Routines", "desc": "Drag steps into order, set rules, see time per step." },
+    { "id": "audit", "file": "web-08-audit-log", "num": "08", "title": "Audit log", "heading": "Audit log", "desc": "Filter, search, export CSV, and see each FHIR AuditEvent." },
+    { "id": "insights", "file": "web-09-insights", "num": "09", "title": "Insights", "heading": "Insights", "desc": "Where patients stop, help by question, and a fairness check by age." }
+  ]
+}

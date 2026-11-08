@@ -1,0 +1,37 @@
+@import '../styles/base.css';
+
+.mobile-stage {
+  background: radial-gradient(520px 420px at 12% 0%, rgb(211 21 107 / 0.28), transparent 70%), radial-gradient(640px 520px at 92% 100%, rgb(18 143 152 / 0.75), transparent 70%), #0b4f54;
+}
+
+.phone-ground {
+  background:
+    radial-gradient(230px 200px at 104% 4%, rgb(18 143 152 / 0.5), transparent 70%), radial-gradient(300px 260px at 50% 40%, rgb(255 255 255 / 0.4), transparent 70%),
+    radial-gradient(280px 240px at -6% 70%, rgb(211 21 107 / 0.24), transparent 70%), radial-gradient(220px 200px at 104% 104%, rgb(18 143 152 / 0.36), transparent 70%), #f1bfc1;
+}
+
+/* High contrast mode for the patient app */
+.hc {
+  --surface: #ffffff;
+  --surface-strong: #ffffff;
+  --glass-edge: #231f20;
+  --fg-muted: #231f20;
+  --fg-subtle: #231f20;
+  --accent-fg: #8a0c46;
+  --shadow-float: none;
+  --shadow-pill: none;
+  background: #ffffff !important;
+}
+.hc .glass,
+.hc .glass-pill,
+.hc .glass-strong {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background-color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .mobile-stage {
+    background: #f1bfc1;
+  }
+}

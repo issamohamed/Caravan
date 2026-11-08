@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Caravan for clinics: audit log</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Outfit:wght@500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F1BFC1}
+a{color:#A80F55}a:hover{color:#8A0C46}
+button,input{font-family:inherit}
+input::placeholder{color:#7A5E64}
+</style>
+<style>
+.glass{backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 22px 44px -20px rgba(122,22,66,.38),0 6px 14px -8px rgba(122,22,66,.20)}
+.glass-dark{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 22px 44px -18px rgba(20,8,14,.55)}
+.glass-thin{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 6px 16px -10px rgba(122,22,66,.35)}
+.pill-glass{backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 8px 18px -10px rgba(122,22,66,.40)}
+.pill-solid{box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 12px 22px -12px rgba(60,10,30,.65)}
+.frost{backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)}
+.glass,.pill-glass,.pill-solid{transition:transform .18s ease,box-shadow .18s ease}
+a.pill-glass:hover,button.pill-glass:hover,a.pill-solid:hover,button.pill-solid:hover,button.glass:hover{transform:translateY(-2px)}
+@media (prefers-reduced-transparency: reduce){.glass,.pill-glass,.glass-thin,.frost{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background-color:#FFFFFF!important}}
+@media (prefers-reduced-motion: reduce){.glass,.pill-glass,.pill-solid{transition:none}}
+a.glass:hover{transform:translateY(-3px)}
+</style>
+
+</head>
+<body>
+<div style="min-height: 100vh; background: radial-gradient(620px 440px at 6% 8%, rgba(211,21,107,0.20), transparent 70%), radial-gradient(760px 560px at 55% 45%, rgba(255,255,255,0.45), transparent 70%), radial-gradient(520px 420px at 100% 96%, rgba(18,143,152,0.50), transparent 70%), radial-gradient(480px 380px at 0% 100%, rgba(211,21,107,0.16), transparent 70%), #F1BFC1; background-attachment: fixed; color: #231F20; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.45">
+<header style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding: 10px 24px; background: #0B4F54; color: #FFFFFF">
+  <a href="web-01-home.html" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none">
+    <span style="font-family: 'Gloock', Georgia, serif; font-size: 30px; font-weight: 400; line-height: 1; letter-spacing: -0.01em; color: #FFFFFF">caravan<span style="color: #F48FB4">.</span></span>
+    <span style="font-size: 13px; color: #A9DADC">for clinics</span>
+  </a>
+  <nav aria-label="Main" style="flex: 1 1 auto; display: flex; flex-wrap: wrap; gap: 2px">
+    <a href="web-01-home.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Home</a>
+    <a href="web-02-desk-board.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Desk board</a>
+    <a href="web-03-phone-check-ins.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Phone check-ins <span style="padding: 1px 7px; border-radius: 999px; background: #D3156B; color: #FFFFFF; font-size: 12px; font-weight: 600">1</span></a>
+    <a href="web-04-imports.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Imports</a>
+    <a href="web-05-duplicate-review.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Review queue <span style="padding: 1px 7px; border-radius: 999px; background: #D3156B; color: #FFFFFF; font-size: 12px; font-weight: 600">4</span></a>
+    <a href="web-06-question-sets.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Question sets</a>
+    <a href="web-07-routines.html" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; border-radius: 999px; color: #CBEBEC; text-decoration: none; font-size: 14px">Routines</a>
+    <a class="pill-solid" href="web-08-audit-log.html" aria-current="page" style="display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 14px; border-radius: 999px; background: #0E6970; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600">Audit log</a>
+  </nav>
+  <button class="pill-solid" aria-label="Signed in as desk user DS" style="width: 44px; height: 44px; border-radius: 999px; border: 1px solid #2A7B80; background: #0E6970; color: #FFFFFF; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit">DS</button>
+</header>
+
+<main style="max-width: 1440px; margin: 0 auto; padding: 26px 24px 64px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 14px">
+    <div>
+      <h1 style="margin: 0; font-family: 'Gloock', Georgia, serif; font-size: 48px; font-weight: 400; line-height: 1.05; letter-spacing: -0.01em">Audit log</h1>
+      <p style="margin: 6px 0 0; font-size: 16px; color: #4A3A3E">Every change Caravan makes or records. Entries can't be edited or deleted.</p>
+    </div>
+    <button class="pill-glass" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 14px; font-weight: 500; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="M7.5 10.5L12 15l4.5-4.5"></path><path d="M4 19h16"></path></svg>Download CSV</button>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+    <div role="group" aria-label="Filter by type" style="display: flex; flex-wrap: wrap; gap: 8px">
+      <button aria-pressed="true" class="pill-solid" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #231F20; background: #231F20; color: #FFFFFF; font-size: 13px; font-weight: 600; cursor: pointer">All · 38</button>
+      <button aria-pressed="false" class="pill-glass" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 13px; font-weight: 500; cursor: pointer">Records linked or merged</button>
+      <button aria-pressed="false" class="pill-glass" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 13px; font-weight: 500; cursor: pointer">Imports</button>
+      <button aria-pressed="false" class="pill-glass" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 13px; font-weight: 500; cursor: pointer">Checks and overrides</button>
+      <button aria-pressed="false" class="pill-glass" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 13px; font-weight: 500; cursor: pointer">Question sets</button>
+      <button aria-pressed="false" class="pill-glass" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 13px; font-weight: 500; cursor: pointer">Phone check-ins</button>
+    </div>
+    <div class="pill-glass" style="flex: 1 1 260px; display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); box-sizing: border-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5A3A42" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg>
+      <input type="search" aria-label="Search the audit log" placeholder="Search by person, record or file" style="flex: 1; min-width: 0; height: 40px; border: 0; background: transparent; color: #231F20; font-size: 14px">
+    </div>
+    <button class="pill-glass" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #B07F88; background: rgba(255,255,255,0.62); color: #231F20; font-size: 13px; font-weight: 500; cursor: pointer">Today ▾</button>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px">
+    <section aria-label="Entries" class="glass" style="flex: 999 1 680px; min-width: 0; border-radius: 28px; background: rgba(255,255,255,0.62); overflow: hidden">
+      <div style="overflow-x: auto">
+        <table style="width: 100%; min-width: 820px; border-collapse: collapse; font-size: 14px">
+          <thead>
+            <tr style="text-align: left; color: #5A3A42; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em">
+              <th scope="col" style="padding: 16px 12px 12px 24px; font-weight: 600; border-bottom: 1px solid #F2D6D8">Time</th>
+              <th scope="col" style="padding: 16px 12px 12px; font-weight: 600; border-bottom: 1px solid #F2D6D8">Type</th>
+              <th scope="col" style="padding: 16px 12px 12px; font-weight: 600; border-bottom: 1px solid #F2D6D8">What happened</th>
+              <th scope="col" style="padding: 16px 12px 12px; font-weight: 600; border-bottom: 1px solid #F2D6D8">Who</th>
+              <th scope="col" style="padding: 16px 12px 12px; font-weight: 600; border-bottom: 1px solid #F2D6D8">Reason given</th>
+              <th scope="col" style="padding: 16px 24px 12px 12px; font-weight: 600; border-bottom: 1px solid #F2D6D8">Where</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="vertical-align: top">
+              <td style="padding: 14px 12px 14px 24px; border-bottom: 1px solid #F7E4E5; font-family: 'IBM Plex Mono', monospace; font-size: 13px">10:41</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5"><span style="padding: 3px 10px; border-radius: 999px; background: #FCE3EC; color: #A80F55; font-size: 12px; font-weight: 600; white-space: nowrap">Records</span></td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">Opened a possible duplicate: import row 3 and record <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px">S-204118</span></td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">DS</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5; color: #4E383E">—</td>
+              <td style="padding: 14px 24px 14px 12px; border-bottom: 1px solid #F7E4E5">Desk 4</td>
+            </tr>
+            <tr style="vertical-align: top">
+              <td style="padding: 14px 12px 14px 24px; border-bottom: 1px solid #F7E4E5; font-family: 'IBM Plex Mono', monospace; font-size: 13px">10:39</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5"><span style="padding: 3px 10px; border-radius: 999px; background: #F4E4E6; color: #4A3A3E; font-size: 12px; font-weight: 600; white-space: nowrap">Check-in</span></td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">Confirmed a Somali interpreter (in person) for Amina Warsame</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">DS</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5; color: #4E383E">Requested at booking</td>
+              <td style="padding: 14px 24px 14px 12px; border-bottom: 1px solid #F7E4E5">Desk 4</td>
+            </tr>
+            <tr style="vertical-align: top">
+              <td style="padding: 14px 12px 14px 24px; border-bottom: 1px solid #F7E4E5; font-family: 'IBM Plex Mono', monospace; font-size: 13px">10:36</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5"><span style="padding: 3px 10px; border-radius: 999px; background: #D2EEEF; color: #0B5C61; font-size: 12px; font-weight: 600; white-space: nowrap">Phone</span></td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">Amina Warsame checked in by phone (simple words, 5 answers)</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">Patient</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5; color: #4E383E">—</td>
+              <td style="padding: 14px 24px 14px 12px; border-bottom: 1px solid #F7E4E5">Phone app</td>
+            </tr>
+            <tr style="vertical-align: top">
+              <td style="padding: 14px 12px 14px 24px; border-bottom: 1px solid #F7E4E5; font-family: 'IBM Plex Mono', monospace; font-size: 13px">10:21</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5"><span style="padding: 3px 10px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 12px; font-weight: 600; white-space: nowrap">Check</span></td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">Held check-in: insurance card on file ended 09/30/2026</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">System</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5; color: #4E383E">Coverage end date passed</td>
+              <td style="padding: 14px 24px 14px 12px; border-bottom: 1px solid #F7E4E5">Checks</td>
+            </tr>
+            <tr style="vertical-align: top">
+              <td style="padding: 14px 12px 14px 24px; border-bottom: 1px solid #F7E4E5; font-family: 'IBM Plex Mono', monospace; font-size: 13px">10:12</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5"><span style="padding: 3px 10px; border-radius: 999px; background: #FBE3C0; color: #5C4510; font-size: 12px; font-weight: 600; white-space: nowrap">Import</span></td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">Imported referrals_week43.csv: 24 rows, 18 ready, 4 to review, 2 held</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">DS</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5; color: #4E383E">Weekly referrals</td>
+              <td style="padding: 14px 24px 14px 12px; border-bottom: 1px solid #F7E4E5">Imports</td>
+            </tr>
+            <tr style="vertical-align: top">
+              <td style="padding: 14px 12px 14px 24px; border-bottom: 1px solid #F7E4E5; font-family: 'IBM Plex Mono', monospace; font-size: 13px">10:12</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5"><span style="padding: 3px 10px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 12px; font-weight: 600; white-space: nowrap">Check</span></td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">Masked a number shaped like an SSN in a referral note (row 11)</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">System</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5; color: #4E383E">ID numbers aren't kept in notes</td>
+              <td style="padding: 14px 24px 14px 12px; border-bottom: 1px solid #F7E4E5">Checks</td>
+            </tr>
+            <tr style="vertical-align: top">
+              <td style="padding: 14px 12px 14px 24px; border-bottom: 1px solid #F7E4E5; font-family: 'IBM Plex Mono', monospace; font-size: 13px">09:58</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5"><span style="padding: 3px 10px; border-radius: 999px; background: #E3F3F3; color: #0B4F54; font-size: 12px; font-weight: 600; white-space: nowrap">Question set</span></td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">Edited the insurance question in "Return visit" (not published yet)</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">MR</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5; color: #4E383E">Patients found "payer" confusing</td>
+              <td style="padding: 14px 24px 14px 12px; border-bottom: 1px solid #F7E4E5">Web</td>
+            </tr>
+            <tr style="vertical-align: top">
+              <td style="padding: 14px 12px 14px 24px; border-bottom: 1px solid #F7E4E5; font-family: 'IBM Plex Mono', monospace; font-size: 13px">09:20</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5"><span style="padding: 3px 10px; border-radius: 999px; background: #D2EEEF; color: #0B5C61; font-size: 12px; font-weight: 600; white-space: nowrap">Phone</span></td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">Answered a help request from Robert Kim</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">MR</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5; color: #4E383E">Walked over to help</td>
+              <td style="padding: 14px 24px 14px 12px; border-bottom: 1px solid #F7E4E5">Desk 2</td>
+            </tr>
+            <tr style="vertical-align: top">
+              <td style="padding: 14px 12px 14px 24px; border-bottom: 1px solid #F7E4E5; font-family: 'IBM Plex Mono', monospace; font-size: 13px">09:19</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5"><span style="padding: 3px 10px; border-radius: 999px; background: #D2EEEF; color: #0B5C61; font-size: 12px; font-weight: 600; white-space: nowrap">Phone</span></td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">Robert Kim asked for help on question 2</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5">Patient</td>
+              <td style="padding: 14px 12px; border-bottom: 1px solid #F7E4E5; color: #4E383E">—</td>
+              <td style="padding: 14px 24px 14px 12px; border-bottom: 1px solid #F7E4E5">Phone app</td>
+            </tr>
+            <tr style="vertical-align: top">
+              <td style="padding: 14px 12px 14px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">09:05</td>
+              <td style="padding: 14px 12px"><span style="padding: 3px 10px; border-radius: 999px; background: #231F20; color: #FFFFFF; font-size: 12px; font-weight: 600; white-space: nowrap">Override</span></td>
+              <td style="padding: 14px 12px">Marked Marcus Webb as self-pay for today's visit</td>
+              <td style="padding: 14px 12px">DS</td>
+              <td style="padding: 14px 12px; color: #4E383E">No current card; patient will bring it next visit</td>
+              <td style="padding: 14px 24px 14px 12px">Desk 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin: 0; padding: 14px 24px; background: rgba(255,255,255,0.35); border-top: 1px solid #F2D6D8; font-size: 13px; color: #4E383E">Showing 10 of 38 entries from today.</p>
+    </section>
+
+    <aside style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <div class="glass" style="padding: 18px 20px; border-radius: 26px; background: rgba(255,255,255,0.62)">
+        <h2 style="margin: 0 0 12px; font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 17px; font-weight: 700">Today</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; text-align: center">
+          <div style="padding: 12px 6px; border-radius: 20px; background: rgba(255,255,255,0.7)"><div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 700">38</div><div style="font-size: 12px; color: #4E383E">entries</div></div>
+          <div style="padding: 12px 6px; border-radius: 20px; background: rgba(255,255,255,0.7)"><div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 700">3</div><div style="font-size: 12px; color: #4E383E">overrides</div></div>
+          <div style="padding: 12px 6px; border-radius: 20px; background: rgba(255,255,255,0.7)"><div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 700">0</div><div style="font-size: 12px; color: #4E383E">merges</div></div>
+        </div>
+      </div>
+      <div class="glass" style="padding: 18px 20px; border-radius: 26px; background: rgba(255,255,255,0.62)">
+        <h2 style="margin: 0 0 10px; font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 17px; font-weight: 700">What gets logged</h2>
+        <ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #3D2F33">
+          <li>Every record link or merge, with the reason</li>
+          <li>Every skipped step or overridden check</li>
+          <li>Every import, row by row</li>
+          <li>Every question-set edit and publish</li>
+          <li>Every phone check-in and help request</li>
+        </ul>
+      </div>
+      <div class="glass" style="padding: 18px 20px; border-radius: 26px; background: rgba(210,238,239,0.9)">
+        <h2 style="margin: 0 0 8px; font-family: 'Outfit', 'IBM Plex Sans', sans-serif; font-size: 17px; font-weight: 700; color: #0B4F54">Why reasons are required</h2>
+        <p style="margin: 0; font-size: 14px; color: #0B4F54">A reason turns "someone changed it" into something a supervisor can check later. It also shows which rules staff keep working around, so the clinic can fix the rule.</p>
+      </div>
+    </aside>
+  </div>
+</main>
+</div>
+<p class="glass-dark" style="position: fixed; right: 16px; bottom: 16px; margin: 0; padding: 7px 14px; border-radius: 999px; background: rgba(11,79,84,0.92); color: #F9C6D4; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 12px; font-weight: 500; z-index: 10">Sample data · no real patients</p>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caravan · demo gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Outfit:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{--blush:#f1bfc1;--hot:#d3156b;--hot-700:#a80f55;--teal-deep:#0b4f54;--teal:#0e7a82;--mist:#d2eeef;--ink:#231f20;--muted:#4e383e}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);font:16px/1.5 "IBM Plex Sans",system-ui,sans-serif;
+  background:radial-gradient(640px 460px at 4% 6%,rgb(211 21 107/.2),transparent 70%),radial-gradient(780px 560px at 55% 42%,rgb(255 255 255/.45),transparent 70%),radial-gradient(560px 460px at 100% 100%,rgb(18 143 152/.48),transparent 70%),var(--blush);background-attachment:fixed}
+a{color:var(--hot-700)}
+:focus-visible{outline:3px solid var(--hot-700);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+header{padding:28px 0 8px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font:400 34px/1 Gloock,Georgia,serif;letter-spacing:-.01em}
+.logo span{color:var(--hot)}
+.tag{padding:6px 14px;border-radius:999px;background:var(--teal-deep);color:#fff;font-size:13px}
+.hero{padding:36px 0 28px}
+.hero h1{margin:0;font:400 clamp(44px,7vw,84px)/.98 Gloock,Georgia,serif;letter-spacing:-.015em}
+.hero p{max-width:640px;margin:14px 0 0;font-size:18px;color:var(--muted)}
+.how{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding:0;list-style:none}
+.how li{padding:8px 16px;border-radius:999px;background:rgb(255 255 255/.62);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgb(255 255 255/.9),0 8px 18px -10px rgb(122 22 66/.4);font-size:14px}
+section{padding:26px 0}
+h2{margin:0;font:700 26px/1.2 Outfit,sans-serif;letter-spacing:-.01em}
+.sub{margin:4px 0 0;color:var(--muted)}
+.grid{display:grid;gap:14px;margin:18px 0 0;padding:0;list-style:none;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{display:flex;flex-direction:column;gap:8px;height:100%;padding:18px;border-radius:24px;text-decoration:none;color:var(--ink);
+  background:rgb(255 255 255/.62);backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgb(255 255 255/.72);
+  box-shadow:inset 0 1px 0 rgb(255 255 255/.9),0 22px 44px -20px rgb(122 22 66/.38);transition:transform .18s ease}
+.card:hover{transform:translateY(-3px)}
+.num{align-self:flex-start;padding:2px 10px;border-radius:999px;background:var(--ink);color:#fff;font:600 12px/1.6 "IBM Plex Sans",sans-serif}
+.web .num{background:var(--teal-deep)}
+.card strong{font:600 19px/1.25 Outfit,sans-serif}
+.card span.d{font-size:14px;color:var(--muted)}
+.card span.go{margin-top:auto;font-size:13px;font-weight:600;color:var(--hot-700)}
+.band{margin:10px 0 0;padding:28px;border-radius:30px;background:var(--teal-deep);color:#fff}
+.band h2{color:#fff}
+.band p{color:rgb(255 255 255/.82);max-width:720px}
+.band a{color:#f9c6d4}
+.band ul{margin:10px 0 0;padding-left:18px}
+footer{padding:30px 0 40px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+footer .logo{font-size:16px}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+@media (prefers-reduced-transparency:reduce){.card,.how li{backdrop-filter:none;background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="logo" aria-label="Caravan">caravan<span aria-hidden="true">.</span></span>
+    <span class="tag">Interactive demo · synthetic data, no real patients</span>
+  </header>
+
+  <div class="hero">
+    <h1>The passenger seat of care.</h1>
+    <p>Caravan is a concept check-in system built from a front desk’s point of view: an age-friendly phone check-in for patients, and a web app for the desk that flags problems and lets people decide.</p>
+    <ul class="how" aria-label="How to use this gallery">
+      <li>Every screen is the real, working app</li>
+      <li>Each file just opens on a different screen</li>
+      <li>Click around: buttons, keys and forms all work</li>
+    </ul>
+  </div>
+
+  <section aria-labelledby="m-h">
+    <h2 id="m-h">For patients · phone</h2>
+    <p class="sub">One job: checking in on arrival. Wording follows the patient’s answers, never their age.</p>
+    <ul class="grid">
+      <li><a class="card" href="mobile-01-arrival.html"><span class="num">01</span><strong>Arrival</strong><span class="d">Greets the patient, shows the visit, and offers the desk instead.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="mobile-02-phone-and-address.html"><span class="num">02</span><strong>Phone and address</strong><span class="d">Confirms contact info on file, with an optional note.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="mobile-03-medicines-question.html"><span class="num">03</span><strong>Medicines question</strong><span class="d">The answer here sets the wording for what follows.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="mobile-04a-simple-words.html"><span class="num">04a</span><strong>Simple words</strong><span class="d">The pill-bottle question, with a reassuring reply.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="mobile-04b-medical-terms.html"><span class="num">04b</span><strong>Medical terms</strong><span class="d">The medication list: Taking, Stopped or Changed.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="mobile-05-reason-for-visit.html"><span class="num">05</span><strong>Reason for visit</strong><span class="d">Pick one, type it, or say it.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="mobile-06-insurance-card.html"><span class="num">06</span><strong>Insurance card</strong><span class="d">Same card, a new card with a photo, or self-pay.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="mobile-07-check-answers.html"><span class="num">07</span><strong>Check answers</strong><span class="d">Change any answer and come straight back here.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="mobile-08-checked-in.html"><span class="num">08</span><strong>Checked in</strong><span class="d">A check-in number and what happens next.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="mobile-09-help-requested.html"><span class="num">09</span><strong>Help requested</strong><span class="d">Staff come to the patient. Answers stay saved.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="mobile-10-desk-instead.html"><span class="num">10</span><strong>Check in at the desk</strong><span class="d">A code to show at the counter. No phone steps.</span><span class="go">Open →</span></a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="w-h" class="web">
+    <h2 id="w-h">For clinics · web</h2>
+    <p class="sub">The desk’s side: every change has a reason, an audit entry and an Undo.</p>
+    <ul class="grid">
+      <li><a class="card" href="web-01-home.html"><span class="num">01</span><strong>Home</strong><span class="d">Today’s numbers, every tool, and what needs you now.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="web-02-desk-board.html"><span class="num">02</span><strong>Desk board</strong><span class="d">Arrivals timeline, check-in steps on number keys, and checks.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="web-03-phone-check-ins.html"><span class="num">03</span><strong>Phone check-ins</strong><span class="d">Live cards, help requests, and each patient’s answers.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="web-04-imports.html"><span class="num">04</span><strong>Imports</strong><span class="d">Drop a file, map it to FHIR, fix flagged rows, commit.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="web-05-review-queue.html"><span class="num">05</span><strong>Review queue</strong><span class="d">Possible duplicates and held rows. Decisions need a reason.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="web-06-question-sets.html"><span class="num">06</span><strong>Question sets</strong><span class="d">Edit both wordings with a live reading level and phone preview.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="web-07-routines.html"><span class="num">07</span><strong>Routines</strong><span class="d">Drag steps into order, set rules, see time per step.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="web-08-audit-log.html"><span class="num">08</span><strong>Audit log</strong><span class="d">Filter, search, export CSV, and see each FHIR AuditEvent.</span><span class="go">Open →</span></a></li>
+      <li><a class="card" href="web-09-insights.html"><span class="num">09</span><strong>Insights</strong><span class="d">Where patients stop, help by question, and a fairness check by age.</span><span class="go">Open →</span></a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="d-h">
+    <div class="band">
+      <h2 id="d-h">Design history</h2>
+      <p>How Caravan got here, from the first static mockups to the working apps.</p>
+      <ul>
+        <li><a href="../design/brand.html">Brand: logo, color and type</a></li>
+        <li><a href="../design/static-mockups/01-glass-combined/01-desk-board.html">Static mockups, round 1 (combined set)</a></li>
+        <li><a href="../design/static-mockups/02-mobile-web-split/web-01-home.html">Static mockups, round 2 (mobile and web split)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <span><span class="logo">caravan<span aria-hidden="true">.</span></span> · concept project · all names and numbers are made up</span>
+    <span>Source code in <code>app/</code></span>
+  </footer>
+</div>
+</body>
+</html>
